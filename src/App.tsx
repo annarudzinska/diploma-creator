@@ -8,7 +8,10 @@ export const App: React.FC = () => {
 
   return (
     <div className="main">
-      <Components.Selectors onTextChange={setHeaderText} onFontSizeChange={setHeaderFontSize} type='Header' />
+            <Components.Selectors onTextChange={setHeaderText} onFontSizeChange={setHeaderFontSize} type='Header' />
+      <Components.Canvas className='canvas'>
+      {headerText}
+      </Components.Canvas>
     </div>
   );
 }

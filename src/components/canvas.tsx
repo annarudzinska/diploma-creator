@@ -3,8 +3,8 @@ import { Paper } from "@mui/material";
 
 
 interface Props {
-    width: number;
-    height: number;
+    width?: number;
+    height?: number;
     children: React.ReactNode;
     className?: string;
 }
@@ -12,7 +12,7 @@ interface Props {
 export const Canvas: React.FC<Props> = (props) => {
 
 	return (
-		<Paper elevation={5} sx={{width: props.width, height: props.height}} className={props.className}>
+		<Paper elevation={5} sx={{width: `${props.width ?? 600}px` , height: `${props.height ?? 800}px`}} className={props.className}>
             {props.children}
         </Paper>
 	);

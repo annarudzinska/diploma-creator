@@ -2,6 +2,7 @@ import React from "react";
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { Typography } from "@mui/material";
+import './selectors.css';
 
 
 type SelectorType = 'Header' | 'Text' | 'Footer';
@@ -47,27 +48,29 @@ export const Selectors: React.FC<Props> = (props) => {
 
 	return (
 		<div>
-			<Typography variant='h6' fontFamily='Arial'>
+			<Typography variant='h6' fontFamily='Arial' className="header">
 				{props.type} selectors
 			</Typography>
 			<TextField
+							className="field"
 				label={`${props.type} content`}
 				value={text}
 				onChange={handleTextChange}
 				defaultValue={`${props.type} content goes here`}
-				sx={{ width: 300 }}
+				sx={{padding: '10px 5px', marginLeft: '15px'}}
 			/>
 			<Autocomplete
-				sx={{ width: 300 }}
 				options={fontAutocompleteOptions}
 				renderInput={(params) => <TextField {...params} label="Font" />}
+				className="field"
 			/>
 			<TextField
 				label='Font size'
 				value={fontSize}
 				onChange={handleFontSizeChange}
 				defaultValue={`${props.type} font size is set here`}
-				sx={{ width: 100 }}
+				sx={{padding: '10px 5px', marginLeft: '15px', width: '100px'}}
+				className="field"
 			/>
 		</div>
 	);
