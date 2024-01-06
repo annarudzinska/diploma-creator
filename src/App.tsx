@@ -1,14 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import * as Components from './components';
 
 export const App: React.FC = () => {
   const [headerText, setHeaderText] = React.useState<string>('');
+  const [headerFontSize, setHeaderFontSize] = React.useState<string>('');
 
   return (
-    <div className="App">
-      <Components.Selectors onHeaderTextChange={setHeaderText}/>
+    <div className="main">
+            <Components.Selectors onTextChange={setHeaderText} onFontSizeChange={setHeaderFontSize} type='Header' />
+      <Components.Canvas className='canvas'>
+      {headerText}
+      </Components.Canvas>
     </div>
   );
 }
